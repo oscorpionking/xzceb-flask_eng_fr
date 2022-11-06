@@ -20,8 +20,8 @@ language_t.set_service_url(url)
 def englishToFrench(englishText):
     #write the code here
     frenchText = language_t.translate(text=englishText, model_id='en-fr').get_result()
-    #return frenchText
-    print(frenchText)
+    return frenchText.get['translations'][0].get['translation']
+    #print(frenchText)
 
 #englishToFrench("Love")
 
@@ -29,6 +29,6 @@ def frenchToEnglish(frenchText):
     #write the code here
     englishText = language_t.translate(text=frenchText, model_id='fr-en').get_result()
     #return frenchText
-    print(englishText)
-    return englishText
+    #print(englishText)
+    return englishText.get['translations'][0].get['translation']
 #frenchToEnglish("bonjour")
